@@ -9,5 +9,6 @@ internal class ProductDtoProfile : Profile
     public ProductDtoProfile()
     {
         CreateMap<Infra.ProductDto, ProductDto>();
+        CreateMap<Infra.RatingDto, RatingDto>();
     }
 }

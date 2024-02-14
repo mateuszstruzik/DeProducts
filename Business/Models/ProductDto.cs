@@ -25,5 +25,8 @@ public record ProductDto
     string Description,
 
     [property: JsonPropertyName("image")]
-    string Image
+    string Image,
+
+    [property: JsonPropertyName("rating")]
+    RatingDto Rating
 );

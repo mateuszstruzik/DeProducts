@@ -29,7 +29,7 @@ internal class ProductsService(IFakeStoreClient fakeStoreClient, IMapper mapper)
     public async Task<PaginationResultModel<IReadOnlyList<ProductDto>>> GetProductsByName(string name, PaginationModel pagination, CancellationToken ct)
     {
         var results = (await fakeStoreClient.GetProducts(ct))
-            .Where(w => w.Title.Contains(name, StringComparison.InvariantCulture))
+            .Where(w => w.Title.ToLowerInvariant().Contains(name.ToLowerInvariant(), StringComparison.InvariantCulture))
             .Skip(pagination.GetSkip())
             .Take(pagination.Take)
             .ToList();
