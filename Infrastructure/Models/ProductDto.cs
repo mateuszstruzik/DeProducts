@@ -2,6 +2,7 @@
 
 namespace Infrastructure.Models;
 
+//w modelach nie tylko w tym projekcie mozna by dodac opsiy i przyklady dla swaggera 
 public record ProductDto(
     [property: JsonPropertyName("id")]
     int Id,
